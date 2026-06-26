@@ -1,0 +1,43 @@
+import { Router } from 'express';
+
+import { authRouter } from './auth.route.js';
+import { careerMatchesRouter } from './career-matches.route.js';
+import { chatRouter } from './chat.route.js';
+import { cognitoRouter } from './cognito.route.js';
+import { healthRouter } from './health.js';
+import { adminRouter } from './admin.route.js';
+import { marketRouter } from './market.route.js';
+import { interviewRouter } from './interview.route.js';
+import { coverLetterRouter } from './coverLetter.route.js';
+import { networkRouter } from './network.route.js';
+import { assessmentRouter } from './assessment.route.js';
+import { negotiationRouter } from './negotiation.route.js';
+import { careerPivotRouter } from './careerPivot.route.js';
+import { linkedInOptimizerRouter } from './linkedInOptimizer.route.js';
+import { coldEmailRouter } from './coldEmail.route.js';
+import { offerComparisonRouter } from './offerComparison.route.js';
+import { profileRouter } from './profile.route.js';
+import { resumeRouter } from './resume.route.js';
+import { roadmapsRouter } from './roadmaps.route.js';
+
+export const v1Router = Router();
+
+v1Router.use('/health', healthRouter);
+v1Router.use('/auth', authRouter);
+v1Router.use('/auth/cognito', cognitoRouter);
+v1Router.use('/resume', resumeRouter);
+v1Router.use('/chat', chatRouter);
+v1Router.use('/career-matches', careerMatchesRouter);
+v1Router.use('/profile', profileRouter);
+v1Router.use('/roadmaps', roadmapsRouter);
+v1Router.use('/admin', adminRouter);
+v1Router.use('/market', marketRouter);
+v1Router.use('/interview', interviewRouter);
+v1Router.use('/cover-letter', coverLetterRouter);
+v1Router.use('/network', networkRouter);
+v1Router.use('/assessment', assessmentRouter);
+v1Router.use('/negotiation', negotiationRouter);
+v1Router.use('/career-pivot', careerPivotRouter);
+v1Router.use('/linkedin-optimizer', linkedInOptimizerRouter);
+v1Router.use('/cold-email', coldEmailRouter);
+v1Router.use('/offer-comparison', offerComparisonRouter);

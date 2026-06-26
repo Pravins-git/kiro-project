@@ -1,0 +1,37 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "watch": {
+    "include": ["**"],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "jest.config.js",
+      "node_modules",
+      "test"
+    ]
+  },
+  "context": {
+    "appName": "ai-career-platform",
+    "environments": {
+      "dev": {
+        "account": "123456789012",
+        "region": "us-east-1",
+        "removalPolicy": "destroy"
+      },
+      "staging": {
+        "account": "123456789012",
+        "region": "us-east-1",
+        "removalPolicy": "retain"
+      },
+      "prod": {
+        "account": "123456789012",
+        "region": "us-east-1",
+        "removalPolicy": "retain"
+      }
+    }
+  }
+}

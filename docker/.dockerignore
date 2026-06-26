@@ -1,0 +1,10 @@
+node_modules
+dist
+cdk.out
+.git
+.github
+.env
+*.log
+coverage
+.kiro
+docs
