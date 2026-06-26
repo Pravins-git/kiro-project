@@ -3,19 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "description": "AI Career Intelligence Platform - Enterprise-grade career recommendation system",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "infrastructure/*"
+  ],
   "scripts": {
-    "dev": "pnpm run --parallel --filter @ai-career/client --filter @ai-career/server dev",
-    "build": "pnpm run --filter @ai-career/shared build && pnpm run --parallel --filter @ai-career/client --filter @ai-career/server build",
-    "build:shared": "pnpm --filter @ai-career/shared build",
-    "build:client": "pnpm --filter @ai-career/client build",
-    "build:server": "pnpm --filter @ai-career/server build",
-    "build:infra": "pnpm --filter @ai-career/infrastructure build",
-    "test": "pnpm run -r test",
-    "lint": "pnpm run -r lint",
-    "lint:fix": "pnpm run -r lint:fix",
+    "dev:client": "npm run dev --workspace=@ai-career/client",
+    "dev:server": "npm run dev --workspace=@ai-career/server",
+    "build": "npm run build --workspace=@ai-career/shared && npm run build --workspace=@ai-career/client && npm run build --workspace=@ai-career/server",
+    "build:shared": "npm run build --workspace=@ai-career/shared",
+    "build:client": "npm run build --workspace=@ai-career/client",
+    "build:server": "npm run build --workspace=@ai-career/server",
+    "build:infra": "npm run build --workspace=@ai-career/infrastructure",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "lint:fix": "npm run lint:fix --workspaces",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
-    "clean": "pnpm run -r clean",
+    "clean": "npm run clean --workspaces",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -40,7 +46,6 @@
   },
   "engines": {
     "node": ">=20.0.0",
-    "pnpm": ">=9.0.0"
-  },
-  "packageManager": "pnpm@9.12.0"
+    "npm": ">=10.0.0"
+  }
 }
